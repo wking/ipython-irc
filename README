@@ -1,0 +1,78 @@
+ipythonirc: An IRC iframe using webchat.freenode.net_
+
+Connect to freenode_ from IPython!
+
+Installation
+============
+
+Packages
+--------
+
+Gentoo
+~~~~~~
+
+I've packaged ipythonirc for Gentoo.  You need layman_ and my `wtk
+overlay`_.  Install with::
+
+    # emerge -av app-portage/layman
+    # layman --add wtk
+    # emerge -av dev-python/ipythonirc
+
+Dependencies
+------------
+
+If you're installing by hand or packaging calibcant for another
+distribution, you'll need the following dependencies:
+
+========  =======  ==================
+Package   Debian_  Gentoo_
+========  =======  ==================
+IPython_  ipython  dev-python/ipython
+========  =======  ==================
+
+Installing by hand
+------------------
+
+ipythonirc is available as a Git_ repository::
+
+    $ git clone git://github.com/wking/ipythonirc.git
+
+See the homepage_ for details.  To install the checkout, run the
+standard::
+
+    $ python setup.py install
+
+
+Usage
+=====
+
+See the module docstrings for simple examples.  For example::
+
+    from ipythonirc import IRC
+    IRC(nick='you', channels=('#ipython', '#other')).show()
+
+Licence
+=======
+
+This project is distributed under the `GNU General Public License
+Version 3`_ or greater.
+
+
+Author
+======
+
+W. Trevor King
+wking@tremily.us
+Copyright 2013
+
+
+.. _webchat.freenode.net: http://webchat.freenode.net/
+.. _freenode: http://freenode.net/
+.. _layman: http://layman.sourceforge.net/
+.. _wtk overlay: http://blog.tremily.us/posts/Gentoo_overlay/
+.. _Debian: http://www.debian.org/
+.. _Gentoo: http://www.gentoo.org/
+.. _IPython: http://ipython.org/
+.. _Git: http://git-scm.com/
+.. _homepage: http://github.com/wking/ipythonirc/
+.. _GNU General Public License Version 3: http://www.gnu.org/licenses/gpl.txt
