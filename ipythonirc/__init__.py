@@ -18,7 +18,10 @@
 """An IRC iframe using webchat.freenode.net
 """
 
-import urllib.parse as _urllib_parse
+try:  # Python 3.x
+    import urllib.parse as _urllib_parse
+except ImportError:  # Python 2.x
+    import urllib as _urllib_parse  # for urlencode
 
 import IPython.display as _IPython_display
 
