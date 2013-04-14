@@ -1,4 +1,4 @@
-ipythonirc: An IRC iframe using webchat.freenode.net_
+ipython-irc: An IRC iframe using webchat.freenode.net_
 
 Connect to freenode_ from IPython!
 
@@ -11,12 +11,12 @@ Packages
 Gentoo
 ~~~~~~
 
-I've packaged ipythonirc for Gentoo.  You need layman_ and my `wtk
+I've packaged ipython-irc for Gentoo.  You need layman_ and my `wtk
 overlay`_.  Install with::
 
     # emerge -av app-portage/layman
     # layman --add wtk
-    # emerge -av dev-python/ipythonirc
+    # emerge -av dev-python/ipython-irc
 
 Dependencies
 ------------
@@ -33,9 +33,9 @@ IPython_  ipython  dev-python/ipython
 Installing by hand
 ------------------
 
-ipythonirc is available as a Git_ repository::
+ipython-irc is available as a Git_ repository::
 
-    $ git clone git://github.com/wking/ipythonirc.git
+    $ git clone git://github.com/wking/ipython-irc.git
 
 See the homepage_ for details.  To install the checkout, run the
 standard::
@@ -74,5 +74,5 @@ Copyright 2013
 .. _Gentoo: http://www.gentoo.org/
 .. _IPython: http://ipython.org/
 .. _Git: http://git-scm.com/
-.. _homepage: http://github.com/wking/ipythonirc/
+.. _homepage: http://github.com/wking/ipython-irc/
 .. _GNU General Public License Version 3: http://www.gnu.org/licenses/gpl.txt
