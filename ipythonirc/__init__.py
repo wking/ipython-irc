@@ -39,20 +39,40 @@ class IRC (object):
     Use with::
 
       IRC(nick='you', channels=('#ipython', ...)).show()
+
+    You can give the server explicitly::
+
+      IRC(server='http://webchat.freenode.net/', ...)
+
+    or use some common nicknames::
+
+      IRC(server='freenode', ...)
+      IRC(server='efnet', ...)
     """
-    def __init__(self, server='chat.freenode.net', nick=None,
+    base_urls = {  # convenient nicknames for common networks
+        'freenode': 'http://webchat.freenode.net/',
+        'efnet': 'http://chat.efnet.org:9090/',
+        }
+
+    def __init__(self, server='http://webchat.freenode.net/', nick=None,
                  channels=('#ipython','#rogue'), width=647, height=400):
         self.server = server
         self.nick = nick
         self.channels = channels
         self.width = width
         self.height = height
-        if self.server not in [
-                'chat.freenode.net',
-                ]:
-            raise NotImplementedError(self.server)
 
-    def _html(self):
+    def _get_server(self):
+        server = self.server
+        if not server.startswith('http://'):
+            base = self.base_urls.get(server, None)
+            if not base:
+                raise NotImplementedError(
+                    '{!r} not supported.  We *do* support {}'.format(
+                        self.server, self.base_urls))
+        return server
+
+    def _get_data(self):
         data = {}
         for attr in ['nick', 'channels']:
             value = getattr(self, attr)
@@ -62,10 +82,15 @@ class IRC (object):
                 data[attr] = value
             else:
                 data['prompt'] = 1
-        url = '{}?{}'.format(
-            'http://webchat.freenode.net',
-            _urllib_parse.urlencode(data)
-            )
+        return data
+
+    def _get_url(self):
+        return '{}?{}'.format(
+            self._get_server(),
+            _urllib_parse.urlencode(self._get_data()))
+
+    def _html(self):
+        url = self._get_url()
         return '<iframe src="{}" width="{}" height="{}"></iframe>'.format(
             url, self.width, self.height)
 

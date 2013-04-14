@@ -15,7 +15,7 @@
 # You should have received a copy of the GNU General Public License along with
 # ipython-irc.  If not, see <http://www.gnu.org/licenses/>.
 
-"An IRC iframe using webchat.freenode.net"
+"An IRC iframe that connects to qwebirc instances"
 
 from distutils.core import setup
 

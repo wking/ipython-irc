@@ -1,6 +1,11 @@
-ipython-irc: An IRC iframe using webchat.freenode.net_
+ipython-irc: An IRC iframe that connects to qwebirc_ instances.
 
-Connect to freenode_ from IPython!
+`Many IRC networks`_ run public qwebirc instances.  For example:
+
+* Freenode_
+* EFNet_
+
+Connect to them from IPython_!
 
 Installation
 ============
@@ -66,8 +71,10 @@ wking@tremily.us
 Copyright 2013
 
 
-.. _webchat.freenode.net: http://webchat.freenode.net/
-.. _freenode: http://freenode.net/
+.. _qwebirc: http://qwebirc.org/
+.. _Many IRC networks: http://qwebirc.org/about
+.. _Freenode: http://webchat.freenode.net/
+.. _EFNet: http://chat.efnet.org:9090/
 .. _layman: http://layman.sourceforge.net/
 .. _wtk overlay: http://blog.tremily.us/posts/Gentoo_overlay/
 .. _Debian: http://www.debian.org/
