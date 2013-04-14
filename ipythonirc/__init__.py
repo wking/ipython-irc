@@ -23,7 +23,7 @@ import urllib.parse as _urllib_parse
 import IPython.display as _IPython_display
 
 
-__version__ = '0.1'
+__version__ = '0.2'
 
 __all__ = ['IRC']
 
